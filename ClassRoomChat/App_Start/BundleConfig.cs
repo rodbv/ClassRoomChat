@@ -20,7 +20,7 @@ namespace ClassRoomChat
                 .Include("~/scripts/breeze.debug.js")
                 .Include("~/scripts/bootstrap.js")
                 .Include("~/scripts/moment.js")
-              );
+                .Include("~/scripts/jquery.signalR-1.1.2.min.js"));
 
             bundles.Add(
               new StyleBundle("~/Content/css")
@@ -29,8 +29,7 @@ namespace ClassRoomChat
                 .Include("~/Content/bootstrap-responsive.css")
                 .Include("~/Content/durandal.css")
                 .Include("~/Content/toastr.css")
-                .Include("~/Content/app.css")
-              );
+                .Include("~/Content/app.css"));
         }
 
         public static void AddDefaultIgnorePatterns(IgnoreList ignoreList)

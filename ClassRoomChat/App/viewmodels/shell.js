@@ -4,7 +4,7 @@
             activate: activate,
             router: router
         };
-        
+
         return shell;
 
         //#region Internal Methods
@@ -15,8 +15,9 @@
         function boot() {
             router.mapNav('home');
             router.mapNav('details');
+            router.mapNav('chatroom');
             log('Hot Towel SPA Loaded!', null, true);
-            return router.activate('home');
+            return router.activate('chatroom');
         }
 
         function log(msg, data, showToast) {

@@ -1,5 +1,21 @@
 ﻿define(['durandal/system', 'durandal/plugins/router', 'services/logger'],
     function (system, router, logger) {
+        //#region Internal Methods
+        var routes = [
+            {
+                url: 'home',
+                moduleId: 'viewmodels/home',
+                name: 'Home',
+                visible: true,
+                caption: '<i class="icon-book"></i> Home'
+            }, {
+                url: 'chatroom',
+                moduleId: 'viewmodels/chatroom',
+                name: 'ChatRoom',
+                visible: true,
+                caption: '<i class="icon-book"></i> Home'
+            }];
+
         var shell = {
             activate: activate,
             router: router
@@ -7,15 +23,12 @@
 
         return shell;
 
-        //#region Internal Methods
         function activate() {
             return boot();
         }
 
         function boot() {
-            router.mapNav('home');
-            router.mapNav('details');
-            router.mapNav('chatroom');
+            router.map(routes);
             log('Hot Towel SPA Loaded!', null, true);
             return router.activate('chatroom');
         }

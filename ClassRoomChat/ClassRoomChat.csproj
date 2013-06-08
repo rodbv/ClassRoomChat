@@ -175,6 +175,7 @@
     <Compile Include="Hubs\ChatInfo.cs" />
     <Compile Include="Hubs\ChatMonitor.cs" />
     <Compile Include="Hubs\ChatRoomHub.cs" />
+    <Compile Include="Hubs\InboundMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

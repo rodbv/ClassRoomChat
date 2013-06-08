@@ -3,4 +3,14 @@
 </section>
 <section>
     <span data-bind="text: chatInfo && chatInfo().ChatId"></span>
+    <ul data-bind="foreach: messages">
+        <li data-bind="text: message"></li>
+    </ul>
+    <div class="container">
+        <input type="text" id="message" />
+        <input type="button" data-bind="click: sendMessage" id="sendmessage" value="Send" />
+        <input type="text" id="displayname" value="Daniel" />
+        <ul id="discussion">
+        </ul>
+    </div>
 </section>

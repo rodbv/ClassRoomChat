@@ -25,9 +25,9 @@ namespace ClassRoomChat.Hubs
             return _chatMonitor.GetChatInfo();
         }
 
-        public void Send(string name, string message)
+        public void Send(ChatMessage message)
         {
-            Clients.All.broadcastMessage(name, message);
+            Clients.All.broadcastMessage(message);
         }
     }
 }

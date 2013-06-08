@@ -26,10 +26,12 @@ namespace ClassRoomChat
               new StyleBundle("~/Content/css")
                 .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/bootstrap.css")
+
                 .Include("~/Content/bootstrap-responsive.css")
                 .Include("~/Content/durandal.css")
                 .Include("~/Content/toastr.css")
-                .Include("~/Content/app.css"));
+               .Include("~/Content/app.css")
+            .Include("~/Content/base.css"));
         }
 
         public static void AddDefaultIgnorePatterns(IgnoreList ignoreList)

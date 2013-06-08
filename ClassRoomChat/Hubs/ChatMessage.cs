@@ -5,10 +5,14 @@ using System.Web;
 
 namespace ClassRoomChat.Hubs
 {
-    public class InboundMessage
+    public class ChatMessage
     {
-        public string Owner { get; set; }
+        public MessageOwner Owner { get; set; }
+
+        public DateTime? Time { get; set; }
 
         public string Body { get; set; }
     }
+
+
 }

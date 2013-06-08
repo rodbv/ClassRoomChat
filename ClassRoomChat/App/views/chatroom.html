@@ -1,16 +1,40 @@
 ﻿<section>
-    <h2 class="page-title" data-bind="text: title"></h2>
-</section>
-<section>
-    <span data-bind="text: chatInfo && chatInfo().ChatId"></span>
-    <ul data-bind="foreach: messages">
-        <li data-bind="text: message"></li>
-    </ul>
-    <div class="container">
-        <input type="text" id="message" />
-        <input type="button" data-bind="click: sendMessage" id="sendmessage" value="Send" />
-        <input type="text" id="displayname" value="Daniel" />
-        <ul id="discussion">
-        </ul>
+    <div class="box color_18">
+        <div class="title row-fluid">
+            <h4 class="pull-left"><span>Messages</span></h4>
+            <!-- <div class="btn-toolbar pull-right ">
+                <div class="btn-group"><a class="btn">View All</a> <a class="btn change_color_outside"><i class="paint_bucket"></i></a></div>
+            </div>-->
+        </div>
+        <!-- End .title -->
+        <div class="box color_18">
+            <div class="content row-fluid" style="overflow-y: scroll; min-height: 500px; max-height: 500px;">
+                <ul class="messages_layout" data-bind="foreach: messages">
+                    <li style="width: 100%" class="from_user left"><a href="#" class="avatar">
+                        <img data-bind="attr: { src: Owner.Avatar }"></a>
+                        <div class="message_wrap">
+                            <span class="arrow"></span>
+                            <div class="info"><a class="name" href="#" data-bind="text: Owner.UserName"></a><span class="author"><a href="#" data-bind="    text: Owner.UserNick"></a></span></div>
+                            <div class="text" style="width: 100%" data-bind="text: Body"></div>
+                            <div class="footer">
+                                <span class="time" data-bind="text: Time"></span>
+                                <div class="actions pull-right hidden-phone">
+                                    <ul class="pull-right">
+                                        <li><a href="#"><i class=" gicon-share-alt icon-white"></i>Reply</a></li>
+                                        <li><a href="#"><i class=" gicon-share icon-white"></i>Share</a></li>
+                                        <li><a href="#"><i class=" gicon-star icon-white"></i>Favorite</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content row-fluid">
+                <textarea data-bind="value: messageToSend" style="resize: none" id="text" rows="3" class="row-fluid"></textarea>
+                <button data-bind="click: sendMessage" type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+        <!-- End .content -->
     </div>
 </section>

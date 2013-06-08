@@ -1,7 +1,15 @@
 ﻿define(['durandal/plugins/router', 'services/logger'], function (router, logger) {
     var chatInfo = ko.observable(),
-        messages = ko.observableArray([{ name: 'daniel', message: 'primeira' }]),
-        chatRoom = $.connection.chatroomhub;
+        messages = ko.observableArray(),
+        chatRoom = $.connection.chatroomhub,
+        chatUser = ko.observable({
+            Owner: {
+                Avatar: '/img/message_avatar2.png',
+                UserName: 'Daniel de Oliveira',
+                UserNick: '@daniel'
+            }
+        });
+    messageToSend = ko.observable();
 
     var init = function () {
         chatRoom.server.getChatInfo().done(function (data) {
@@ -11,7 +19,8 @@
     };
 
     var sendMessage = function () {
-        chatRoom.server.send('teste', 'teste message');
+        var message = { Time: '', Owner: chatUser().Owner, Body: messageToSend() };
+        chatRoom.server.send(message);
     };
 
     var viewAttached = function () {
@@ -19,8 +28,8 @@
     };
 
     function initClient() {
-        chatRoom.client.broadcastMessage = function (name, message) {
-            messages.push({ name: name, message: message });
+        chatRoom.client.broadcastMessage = function (message) {
+            messages.push(message);
         };
     };
 
@@ -34,6 +43,8 @@
     var vm = {
         chatInfo: chatInfo,
         messages: messages,
+        messageToSend: messageToSend,
+        chatUser: chatUser,
         sendMessage: sendMessage,
         activate: activate,
         viewAttached: viewAttached,

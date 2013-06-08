@@ -9,10 +9,7 @@
                 UserNick: '@daniel'
             }
         }),
-        messageToSend = ko.observable(),
-        canSendMessage = ko.computed(function () {
-            return messageToSend() === '';
-        });
+        messageToSend = ko.observable();
 
     var init = function () {
         chatRoom.server.getChatInfo().done(function (data) {
@@ -22,8 +19,8 @@
     };
 
     var sendMessage = function () {
-        //if (messageToSend() === '' || messageToSend() === undefined)
-        //    return;
+        if (messageToSend() === '' || messageToSend() === undefined)
+            return;
         var message = { Time: '', Owner: chatUser().Owner, Body: messageToSend() };
         chatRoom.server.send(message).done(messageToSend(''));
     };
@@ -53,7 +50,6 @@
         sendMessage: sendMessage,
         activate: activate,
         viewAttached: viewAttached,
-        canSendMessage: canSendMessage,
         title: 'Chat Room'
     };
 

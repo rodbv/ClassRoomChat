@@ -8,7 +8,7 @@
         </div>
         <!-- End .title -->
         <div class="box color_18">
-            <div class="content row-fluid" style="overflow-y: scroll; min-height: 500px; max-height: 500px;">
+            <div class="content row-fluid" style="float: left; margin-bottom: 10px; width: 70%; overflow-y: scroll; min-height: 500px; max-height: 500px;">
                 <ul class="messages_layout" data-bind="foreach: messages">
                     <li style="width: 100%" class="from_user left"><a href="#" class="avatar">
                         <img data-bind="attr: { src: Owner.Avatar }"></a>
@@ -29,10 +29,14 @@
                         </div>
                     </li>
                 </ul>
+
+            </div>
+            <div class="right" style="padding: 5px; margin-bottom: 10px; float: right; width: 30%">
+                Lista de Usuários do Chat
             </div>
             <div class="content row-fluid">
                 <textarea data-bind="value: messageToSend" style="resize: none" id="text" rows="3" class="row-fluid"></textarea>
-                <button data-bind="click: sendMessage, disable: canSendMessage" type="submit" class="btn btn-primary">Enviar</button>
+                <button data-bind="click: sendMessage" type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
         <!-- End .content -->

@@ -32,7 +32,7 @@
             </div>
             <div class="content row-fluid">
                 <textarea data-bind="value: messageToSend" style="resize: none" id="text" rows="3" class="row-fluid"></textarea>
-                <button data-bind="click: sendMessage" type="submit" class="btn btn-primary">Enviar</button>
+                <button data-bind="click: sendMessage, disable: canSendMessage" type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
         <!-- End .content -->
